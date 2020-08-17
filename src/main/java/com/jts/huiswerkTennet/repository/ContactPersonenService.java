@@ -1,4 +1,4 @@
-package com.jts.huiswerkTennet.service;
+package com.jts.huiswerkTennet.repository;
 
 import com.jts.huiswerkTennet.model.ContactPersonen;
 import org.springframework.data.repository.CrudRepository;
