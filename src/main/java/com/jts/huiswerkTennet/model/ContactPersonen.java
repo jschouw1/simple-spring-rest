@@ -10,7 +10,7 @@ public class ContactPersonen {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int contactPersonenId;
+    int id;
     String name;
     String zipCode;
     String city;
@@ -27,8 +27,8 @@ public class ContactPersonen {
         this.number = number;
     }
 
-    public int getContactPersonenId() {
-        return contactPersonenId;
+    public int getId() {
+        return id;
     }
 
     public String getName() {
@@ -66,7 +66,7 @@ public class ContactPersonen {
     @Override
     public String toString() {
         return "ContactPersonen{" +
-                "contactPersonenId=" + contactPersonenId +
+                "contactPersonenId=" + id +
                 ", name='" + name + '\'' +
                 ", zipCode='" + zipCode + '\'' +
                 ", city='" + city + '\'' +

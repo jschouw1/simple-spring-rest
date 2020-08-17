@@ -10,7 +10,7 @@ public class ProductieInstallaties {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int productieInstallatiesId;
+    int id;
     String name;
     int contact;
     double outputPower;
@@ -24,8 +24,8 @@ public class ProductieInstallaties {
         this.outputPower = outputPower;
     }
 
-    public int getProductieInstallatiesId() {
-        return productieInstallatiesId;
+    public int getId() {
+        return id;
     }
 
     public String getName() {
@@ -55,7 +55,7 @@ public class ProductieInstallaties {
     @Override
     public String toString() {
         return "ProductieInstallaties{" +
-                "productieInstallatiesId=" + productieInstallatiesId +
+                "productieInstallatiesId=" + id +
                 ", name='" + name + '\'' +
                 ", contact=" + contact +
                 ", outputPower=" + outputPower +

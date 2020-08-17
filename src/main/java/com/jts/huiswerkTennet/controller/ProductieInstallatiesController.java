@@ -1,7 +1,7 @@
 package com.jts.huiswerkTennet.controller;
 
 import com.jts.huiswerkTennet.model.ProductieInstallaties;
-import com.jts.huiswerkTennet.repository.ProductieInstallatiesService;
+import com.jts.huiswerkTennet.service.ProductieInstallatiesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,6 +18,11 @@ public class ProductieInstallatiesController {
     @GetMapping("/productieInstallaties")
     public Iterable<ProductieInstallaties> findAll() {
         return productieInstallatiesService.findAll();
+    }
+
+    @GetMapping("/productieInstallaties/id/{id}")
+    public Iterable findById(@PathVariable("id") int id) {
+        return productieInstallatiesService.getOneById(id);
     }
 
     @GetMapping("/productieInstallaties/name/{name}")
