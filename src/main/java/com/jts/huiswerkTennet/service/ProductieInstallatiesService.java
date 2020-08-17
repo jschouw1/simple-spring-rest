@@ -1,4 +1,7 @@
 package com.jts.huiswerkTennet.service;
 
-public interface ProductieInstallatiesService {
+import com.jts.huiswerkTennet.model.ProductieInstallaties;
+import org.springframework.data.repository.CrudRepository;
+
+public interface ProductieInstallatiesService extends CrudRepository<ProductieInstallaties, Integer> {
 }

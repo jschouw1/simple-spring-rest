@@ -1,4 +1,7 @@
 package com.jts.huiswerkTennet.service;
 
-public interface ContactPersonenService {
+import com.jts.huiswerkTennet.model.ContactPersonen;
+import org.springframework.data.repository.CrudRepository;
+
+public interface ContactPersonenService extends CrudRepository<ContactPersonen, Integer> {
 }
