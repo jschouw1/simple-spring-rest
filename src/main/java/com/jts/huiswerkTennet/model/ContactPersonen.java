@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class ContactPersonen {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int contactPersonenId;
     String name;
     String zipCode;
@@ -20,10 +20,15 @@ public class ContactPersonen {
     }
 
     public ContactPersonen(String name, String zipCode, String city, String number) {
+
         this.name = name;
         this.zipCode = zipCode;
         this.city = city;
         this.number = number;
+    }
+
+    public int getContactPersonenId() {
+        return contactPersonenId;
     }
 
     public String getName() {
@@ -61,7 +66,8 @@ public class ContactPersonen {
     @Override
     public String toString() {
         return "ContactPersonen{" +
-                "name='" + name + '\'' +
+                "contactPersonenId=" + contactPersonenId +
+                ", name='" + name + '\'' +
                 ", zipCode='" + zipCode + '\'' +
                 ", city='" + city + '\'' +
                 ", number='" + number + '\'' +

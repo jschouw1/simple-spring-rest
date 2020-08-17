@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class ProductieInstallaties {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int productieInstallatiesId;
     String name;
     int contact;
@@ -22,6 +22,10 @@ public class ProductieInstallaties {
         this.name = name;
         this.contact = contact;
         this.outputPower = outputPower;
+    }
+
+    public int getProductieInstallatiesId() {
+        return productieInstallatiesId;
     }
 
     public String getName() {
@@ -51,7 +55,8 @@ public class ProductieInstallaties {
     @Override
     public String toString() {
         return "ProductieInstallaties{" +
-                "name='" + name + '\'' +
+                "productieInstallatiesId=" + productieInstallatiesId +
+                ", name='" + name + '\'' +
                 ", contact=" + contact +
                 ", outputPower=" + outputPower +
                 '}';

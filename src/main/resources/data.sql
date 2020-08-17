@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS contact_personen;
 DROP TABLE IF EXISTS productie_installaties;
 
 CREATE TABLE contact_personen (
-    id INT AUTO_INCREMENT  PRIMARY KEY,
+    contact_personen_id INT AUTO_INCREMENT  PRIMARY KEY,
     name VARCHAR(250) NOT NULL,
     zip_code VARCHAR(6) NOT NULL,
     city VARCHAR(250) NOT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE contact_personen (
 );
 
 CREATE TABLE productie_installaties (
-    id Int AUTO_INCREMENT  PRIMARY KEY,
+    productie_installaties_id Int AUTO_INCREMENT  PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     contact INT NOT NULL,
     output_power DOUBLE
