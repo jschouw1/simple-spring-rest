@@ -10,7 +10,8 @@
 	</parent>
 	<groupId>com.jts</groupId>
 	<artifactId>huiswerkTennet</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
+	<packaging>jar</packaging>
 	<name>huiswerkTennet</name>
 	<description>Homework project for TenneT interview</description>
 
