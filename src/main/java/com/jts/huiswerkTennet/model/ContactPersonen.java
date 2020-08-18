@@ -1,26 +1,31 @@
 package com.jts.huiswerkTennet.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "contact_personen")
 public class ContactPersonen {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
+
+    @Column(name = "name")
     String name;
+
+    @Column(name = "zip_code")
     String zipCode;
+
+    @Column(name = "city")
     String city;
+
+    @Column(name = "number")
     String number;
 
     public ContactPersonen() {
     }
 
     public ContactPersonen(String name, String zipCode, String city, String number) {
-
         this.name = name;
         this.zipCode = zipCode;
         this.city = city;

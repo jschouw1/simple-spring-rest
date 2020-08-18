@@ -1,18 +1,22 @@
 package com.jts.huiswerkTennet.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "productie_installaties")
 public class ProductieInstallaties {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
+
+    @Column(name = "name")
     String name;
+
+    @Column(name = "contact")
     int contact;
+
+    @Column(name = "output_power")
     double outputPower;
 
     public ProductieInstallaties() {
