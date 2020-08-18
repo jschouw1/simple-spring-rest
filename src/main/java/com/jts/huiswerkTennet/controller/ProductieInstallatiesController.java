@@ -30,9 +30,9 @@ public class ProductieInstallatiesController {
         return productieInstallatiesService.findByName(name);
     }
 
-    @GetMapping("/productieInstallaties/outputPower/{outputPower}")
-    public Iterable findByOutputPower(@PathVariable("outputPower") double outputPower) {
-        return productieInstallatiesService.findByOutputPower(outputPower);
+    @GetMapping("/productieInstallaties/outputPower/{outputPowerBottom}/{outputPowerTop}")
+    public Iterable findByOutputPowerGreaterThanAndOutputPowerLessThan(@PathVariable("outputPowerBottom") double outputPowerBottom, @PathVariable("outputPowerTop") double outputPowerTop) {
+        return productieInstallatiesService.findByOutputPowerGreaterThanAndOutputPowerLessThan(outputPowerBottom, outputPowerTop);
     }
 
 

@@ -8,6 +8,6 @@ public interface ProductieInstallatiesService extends CrudRepository<ProductieIn
 
     Iterable<ProductieInstallaties> getOneById(int id);
     Iterable<ProductieInstallaties> findByName(String name);
-    Iterable<ProductieInstallaties> findByOutputPower(double outputPower);
+    Iterable<ProductieInstallaties> findByOutputPowerGreaterThanAndOutputPowerLessThan(double outputPowerBottom, double outputPowerTop);
 
 }
