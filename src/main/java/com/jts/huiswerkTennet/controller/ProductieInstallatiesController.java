@@ -14,11 +14,11 @@ public class ProductieInstallatiesController {
     @PostMapping("/productieInstallaties")
     public ProductieInstallaties create(@RequestBody ProductieInstallaties productieInstallaties) throws Exception {
         if (productieInstallaties.getName() == null || productieInstallaties.getName().equals(""))
-            throw new Exception("Name");
+            throw new Exception("Name ongeldig");
         else if (productieInstallaties.getContact() < 0)
-            throw new Exception("Contact");
+            throw new Exception("Contact ongeldig");
         else if (productieInstallaties.getOutputPower() < 0.0001 || productieInstallaties.getOutputPower() > 999999)
-            throw new Exception("Output power");
+            throw new Exception("Output power ongeldig");
         else
             return productieInstallatiesService.save(productieInstallaties);
     }
@@ -39,15 +39,19 @@ public class ProductieInstallatiesController {
     }
 
     @GetMapping("/productieInstallaties/outputPower/{outputPowerBottom}/{outputPowerTop}")
-    public Iterable findByOutputPowerGreaterThanAndOutputPowerLessThan(@PathVariable("outputPowerBottom") double outputPowerBottom, @PathVariable("outputPowerTop") double outputPowerTop) {
-        return productieInstallatiesService.findByOutputPowerGreaterThanAndOutputPowerLessThan(outputPowerBottom, outputPowerTop);
+    public Iterable findByOutputPowerGreaterThanAndOutputPowerLessThan(@PathVariable("outputPowerBottom") double outputPowerBottom, @PathVariable("outputPowerTop") double outputPowerTop) throws Exception {
+        if (outputPowerBottom > outputPowerTop)
+            throw new Exception("Ondergrens hoger dan bovengrens");
+        else
+            return productieInstallatiesService.findByOutputPowerGreaterThanAndOutputPowerLessThan(outputPowerBottom, outputPowerTop);
     }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(Exception.class)
     public String exceptionHandler(Exception e) {
-        return e.getMessage() + " ongeldig, productie installatie niet opgeslagen.";
+        return e.getMessage() + ", probeer opnieuw.";
     }
+
 
 
 }
